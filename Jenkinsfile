@@ -48,13 +48,10 @@ pipeline
         {
             steps
             {
-                sh '''
-
-                    kubectl apply -f k8s/Deployment.yml
-                    kubectl apply -f k8s/Service.yml
-                    kubectl port-forward weather-svc 8000:8000 -n devops
-
-                '''
+               script
+               {
+                    deployToK8s()
+               }
             }
         }
     }
