@@ -51,6 +51,7 @@ pipeline
                script
                {
                     deployToK8s()
+                    kubectl port-forward service/weather-svc 8000:8000 -n devop
                }
             }
         }
