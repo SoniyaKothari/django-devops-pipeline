@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: weather-svc
+  namespace: devops
+spec:
+  selector:
+    app: django
+  ports:
+   - port: 8000
+     targetPort: 8000
+     protocol: TCP
+  type: CLusterIP
