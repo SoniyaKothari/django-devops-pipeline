@@ -39,7 +39,7 @@ pipeline
             {
                 script
                 {
-                    push("django-app","latest","soniya06")
+                    pushDockerImage("django-app","latest","soniya06")
                 }
             }
         }
