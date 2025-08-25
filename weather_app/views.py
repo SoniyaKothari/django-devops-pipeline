@@ -38,14 +38,15 @@ def home(request):
 
         day =datetime.date.today()
 
-        return render(request,'weather_app/index.html',{'description':description, 'icon':icon, 'temp':temp, 'day':day, 'city':city,'exception_occurred':False ,'image_url':image_url})
+        return render(request,'weather_app/index.html',{'description':description, 'icon':icon, 'temp':temp, 'day':day, 'city':city,'exception_occurred':False ,'image_url':image_url,'app_name': '🌤️ My Custom Weather App 🌦️'})
     
     except:
         exception_occurred=True
         messages.error(request,'Entered data is not available to API')
         day=datetime.date.today()
 
-        return render(request,'weather_app/index.html',{'description':'clear sky', 'icon':'01d', 'temp': 25, 'day':day, 'city':'New York','exception_occurred':exception_occurred})
+        return render(request,'weather_app/index.html',{'description':'clear sky', 'icon':'01d', 'temp': 25, 'day':day, 'city':'New York','exception_occurred':exception_occurred,'app_name': '🌤️ My Custom Weather App 🌦️'})
     
 
    
+
